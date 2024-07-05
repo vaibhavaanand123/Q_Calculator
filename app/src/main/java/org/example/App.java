@@ -41,7 +41,6 @@ public class App {
             continue;
             default:
             System.out.println("Kindly input correct response");
-            input.nextLine();
             continue;
         }
         System.out.println("Enter first number: ");

@@ -15,15 +15,31 @@ public class StandardCalculatorTest {
     }
 
     @Test
-    @DisplayName("Addition Test")
+    @DisplayName("Exception Addition Test")
 
-    void testAddition(){
+    void testAdditionException(){
         Assertions.assertThrows(ArithmeticException.class,new Executable() {
             @Override
             public void execute() throws Throwable{
                 standardCalculator.add(Double.MAX_VALUE,Double.MAX_VALUE);
             }
         });
+    }
+
+    @Test 
+    @DisplayName("Addition Test")
+    void testAddition(){
+        standardCalculator.add(35, 12);
+        Assertions.assertEquals(standardCalculator.printResult(), 47.0);
+
+    }
+
+    @Test 
+    @DisplayName("Addition Test1")
+    void testAddition1(){
+        standardCalculator.add(0, 0);
+        Assertions.assertEquals(standardCalculator.printResult(), 0.0);
+
     }
 
     
